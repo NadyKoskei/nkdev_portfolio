@@ -34,7 +34,23 @@
   #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 3.5rem; position: relative; overflow: hidden; }
   .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: .3; mask-image: radial-gradient(ellipse 80% 70% at 20% 50%, black 30%, transparent 100%); }
   .hero-orb { position: absolute; right: -10vw; top: 50%; transform: translateY(-50%); width: 65vw; height: 65vw; border-radius: 50%; background: radial-gradient(circle at 35% 40%, rgba(192,57,43,.13) 0%, rgba(192,57,43,.03) 45%, transparent 75%); pointer-events: none; }
-  .hero-tag { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--red); margin-bottom: 1.4rem; opacity: 0; animation: fadeUp .8s .3s forwards; }
+  .hero-tag { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--red); margin-bottom: 1.4rem; opacity: 0; animation: fadeUp .8s .3s forwards;   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem; }
+
+  /* Mobile */
+@media (max-width: 768px) {
+  .hero-tag {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-tag .separator {
+    display: none;
+  }
+}
 
   .hero-name-row { display: flex; align-items: center; gap: 1.6rem; opacity: 0; animation: fadeUp .9s .5s forwards; }
   .hero-avatar {
@@ -210,7 +226,15 @@
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-orb"></div>
-  <p class="hero-tag">Software Developer &nbsp;&#183;&nbsp; Tech-Creative Director &nbsp;&#183;&nbsp; Visual-Literary Artist </p>
+  <p class="hero-tag">  
+  <span>Software Developer</span>
+  <span class="separator">&nbsp;&#183;&nbsp;</span>
+
+  <span>Tech-Creative Director</span>
+  <span class="separator">&nbsp;&#183;&nbsp;</span>
+
+  <span>Visual-Literary Artist</span> 
+</p>
   <div class="hero-name-row">
     <img src="images/nkphoto.png" alt="Nady Koskei" class="hero-avatar"/>
     <h1 class="hero-name">Koskei<br><em>Nady</em></h1>
@@ -288,23 +312,7 @@
   <h2 class="section-title reveal">Things I&#8217;ve<br><em>built</em></h2>
   <div class="projects-grid">
 
-    <div class="project-card reveal">
-      <div class="project-preview">
-    <img
-      src="images/eduinitiativepreview.png"
-      alt="Edu Initiative Kenya Website Preview"
-      class="project-image"
-    >
-        <div class="preview-overlay"></div>
-      </div>
-      <div class="project-body">
-        <p class="project-num">01</p>
-        <h3 class="project-title">Edu Initiative Kenya</h3>
-        <p class="project-desc">A professional educational initiative website &#8212; clean, fast, and built to convert. Designed and developed end-to-end to give the client a strong, credible online presence with intuitive navigation and clear service communication.</p>
-    
-        <a href="https://eduinitiativekenya.org/" target="_blank" class="project-link">View Live Site</a>
-      </div>
-    </div>
+
 
     <div class="project-card reveal">
       <div class="project-preview">
@@ -312,7 +320,7 @@
         <div class="preview-overlay"></div>
       </div>
       <div class="project-body">
-        <p class="project-num">02</p>
+        <p class="project-num">01</p>
         <h3 class="project-title">Niloy&#8217;d Insurance</h3>
         <p class="project-desc">A polished insurance services website built to establish trust and clarity for prospective clients. Focused on accessible layout, professional tone, and a smooth user experience across all devices.</p>
     
@@ -326,11 +334,29 @@
         <div class="preview-overlay"></div>
       </div>
       <div class="project-body">
-        <p class="project-num">03</p>
+        <p class="project-num">02</p>
         <h3 class="project-title">Afri Create (in progress)</h3>
         <p class="project-desc">A full-stack application featuring user authentication, database integration, and a clean React front-end. Demonstrates end-to-end architecture from REST API design to responsive UI &#8212; .</p>
        
         <a href="https://afri-create-connect.lovable.app/" target="_blank" class="project-link">View Live Site</a>
+      </div>
+    </div>
+
+        <div class="project-card reveal">
+      <div class="project-preview">
+    <img
+      src="images/eduinitiativepreview.png"
+      alt="Edu Initiative Kenya Website Preview"
+      class="project-image"
+    >
+        <div class="preview-overlay"></div>
+      </div>
+      <div class="project-body">
+        <p class="project-num">03</p>
+        <h3 class="project-title">Edu Initiative Kenya</h3>
+        <p class="project-desc">A professional educational initiative website &#8212; clean, fast, and built to convert. Designed and developed end-to-end to give the client a strong, credible online presence with intuitive navigation and clear service communication.</p>
+    
+        <a href="https://eduinitiativekenya.org/" target="_blank" class="project-link">View Live Site</a>
       </div>
     </div>
 
@@ -340,7 +366,7 @@
         <div class="preview-overlay"></div>
       </div>
       <div class="project-body">
-        <p class="project-num">03</p>
+        <p class="project-num">04</p>
         <h3 class="project-title">Event Hub (app coming soon)</h3>
         <p class="project-desc"> An all-in-one event management platform designed to simplify the entire event lifecycle—from planning and vendor coordination to ticket sales, invitations, and post-event analytics. Features secure user authentication, real-time data management, and a modern, responsive interface.&#8212; .</p>
   
